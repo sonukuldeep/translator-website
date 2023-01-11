@@ -1,12 +1,12 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
+import { Box } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-export default function ActionAreaCard(props) {
+export default function LanguageComponent(props) {
     const { imageLink, title, description } = props.data
     return (
         <Box component="span" sx={{ p: 2 }}>
