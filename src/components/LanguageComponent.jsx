@@ -5,11 +5,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 export default function LanguageComponent(props) {
-    const { imageLink, title, description } = props.data
+    const { imageLink, title, description, route } = props.data
+    const navigate = useNavigate()
     return (
-        <Box component="span" sx={{ p: 2 }}>
+        <Box onClick={()=>navigate(route)} component="span" sx={{ p: 2 }}>
             <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea>
                     <CardMedia

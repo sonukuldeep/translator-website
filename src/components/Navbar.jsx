@@ -16,6 +16,7 @@ import Button from '@mui/material/Button';
 
 // css
 import styles from '../styles/shadow.module.css'
+import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About'];
@@ -47,7 +48,7 @@ function DrawerAppBar(props) {
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
-
+    const navigate = useNavigate()
     return (
         <Box sx={{ display: 'flex' }}>
             <AppBar position='static' component="nav">
@@ -70,7 +71,7 @@ function DrawerAppBar(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
+                            <Button onClick={() => navigate('/')} key={item} sx={{ color: '#fff' }}>{/* fix this */}
                                 {item}
                             </Button>
                         ))}
