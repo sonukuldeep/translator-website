@@ -1,5 +1,5 @@
 import LanguageComponent from './LanguageComponent'
-import data from './mockData.js'
+import data from '../assets/mockData.js'
 import styles from '../styles/utility.module.css'
 
 export default function LanguageWrapperComponent() {

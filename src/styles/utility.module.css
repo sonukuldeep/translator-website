@@ -4,3 +4,20 @@
     place-items: center;
     gap: 5px;
 }
+
+.backgroundGradient::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -50px;
+    --bg-color: rgb(34,193,195);
+
+    box-shadow: 0 0 0 100vmax var(--bg-color);
+    clip-path: inset(0 -100vmax);
+    background-color: var(--bg-color);
+    height: 150vh;
+}
+
+.backgroundGradient {
+    position: relative;
+}
