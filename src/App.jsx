@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import LanguageWrapperComponent from './components/LanguageComponentWrapper'
 import { Routes, Route } from 'react-router-dom'
 import Language from './pages/Language'
-import data from './assets/mockData.js'
 
 const lang = {
   'hindi': google.elements.transliteration.LanguageCode.HINDI,
@@ -16,6 +15,17 @@ const lang = {
 
 
 const App = () => {
+  const [quote, setQuote] = useState({})
+
+  useEffect(() => {
+    const quoteData = async () => {
+      const response = await fetchQuote()
+      setQuote(response)
+    }
+    quoteData()
+
+  }, [])
+
   return (
     <div>
       <Routes>
@@ -34,12 +44,12 @@ const App = () => {
 
 export default App
 
-function filterData(languageName) {
-  const filter = data.filter(item => (item.lang.toLowerCase() === languageName))
-  if (filter.length === 0) {
-    console.log(`check input ${languageName} not found in data`)
-    return null
+async function fetchQuote() {
+  const res = await fetch('https://api.quotable.io/random')
+  if (res.ok) {
+    const data = await res.json()
+    return data
   }
-  return filter[0]
+  else
+    console.error('something went wrong!')
 }
-

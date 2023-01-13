@@ -13,7 +13,7 @@ const Lang = ({ code }) => {
     const [langState, setLangState] = useState(true)
     const { pathname } = useLocation()
     const languageTitle = pathname.slice(1).charAt(0).toUpperCase() + pathname.slice(2)
-
+    
     useEffect(() => {
         onLoad(code)
 
