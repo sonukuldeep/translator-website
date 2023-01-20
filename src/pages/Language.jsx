@@ -94,7 +94,7 @@ const Lang = ({ code }) => {
                 layoutName={layout}
                 onChange={onChange}
                 onKeyPress={onKeyPress}
-                layout={LanguageLayout.hindi}
+                layout={LanguageLayout.odia}
             />
         </Box>
     )
