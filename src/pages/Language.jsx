@@ -10,6 +10,12 @@ import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import LanguageLayout from '../components/keyboards/CustomKeys.js'
 
+const languageLayout = {
+    hindi: LanguageLayout.hindi,
+    odia: LanguageLayout.odia
+}
+
+
 const Lang = ({ code }) => {
     const [langState, setLangState] = useState(true)
     const { pathname } = useLocation()
@@ -31,7 +37,7 @@ const Lang = ({ code }) => {
     const [input, setInput] = useState("");
     const [layout, setLayout] = useState("default");
     const keyboard = useRef();
-
+    
     const onChange = input => {
 
         const modifiedInput = inputRef.current.value + input.substr(-1)
@@ -61,7 +67,6 @@ const Lang = ({ code }) => {
         keyboard.current.setInput(input);
 
     };
-
 
     return (
         <Box className={styles.backgroundGradient} sx={{ marginTop: '20px' }}>
@@ -94,7 +99,7 @@ const Lang = ({ code }) => {
                 layoutName={layout}
                 onChange={onChange}
                 onKeyPress={onKeyPress}
-                layout={LanguageLayout.odia}
+                layout={languageLayout[languageTitle.toLocaleLowerCase()]}
             />
         </Box>
     )
