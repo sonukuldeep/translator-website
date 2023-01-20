@@ -11,21 +11,21 @@ import "react-simple-keyboard/build/css/index.css";
 import LanguageLayout from '../components/keyboards/CustomKeys.js'
 
 const Lang = ({ code }) => {
-    const inputRef = useRef()
     const [langState, setLangState] = useState(true)
     const { pathname } = useLocation()
     const languageTitle = pathname.slice(1).charAt(0).toUpperCase() + pathname.slice(2)
+    const inputRef = useRef();
 
     const triggerKey = (e) => {
         if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
             setLangState(pre => !pre)
         }
+
     }
 
     useEffect(() => {
         onLoad(code)
     }, [])
-
 
     // keyboard
     const [input, setInput] = useState("");
@@ -33,8 +33,11 @@ const Lang = ({ code }) => {
     const keyboard = useRef();
 
     const onChange = input => {
-        setInput(input);
-        console.log("Input changed", input);
+
+        const modifiedInput = inputRef.current.value + input.substr(-1)
+
+        setInput(modifiedInput);
+
     };
 
     const handleShift = () => {
@@ -43,7 +46,7 @@ const Lang = ({ code }) => {
     };
 
     const onKeyPress = button => {
-        console.log("Button pressed", button);
+        // console.log("Button pressed", button);
 
         /**
          * If you want to handle the shift and caps lock buttons
@@ -52,12 +55,12 @@ const Lang = ({ code }) => {
     };
 
     const onChangeInput = event => {
-        const input = event.target.value;
+        // let input = inputRef.current.value;
+        let input = event.target.value;
         setInput(input);
         keyboard.current.setInput(input);
-    };
 
-    // keyboard
+    };
 
 
     return (
@@ -80,11 +83,14 @@ const Lang = ({ code }) => {
                     id="transliterateTextarea"
                     style={{ minWidth: 350, width: '50vw' }}
                     onKeyDownCapture={triggerKey}
+                    value={input}
+                    onChange={onChangeInput}
                     ref={inputRef}
+                // onBlur={lostFocus}
                 />
             </Box>
             <Keyboard
-                keyboardRef={r => (inputRef.current = r)}
+                keyboardRef={r => (keyboard.current = r)}
                 layoutName={layout}
                 onChange={onChange}
                 onKeyPress={onKeyPress}
