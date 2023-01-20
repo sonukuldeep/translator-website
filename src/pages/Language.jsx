@@ -5,14 +5,14 @@ import Typography from '@mui/material/Typography';
 import { Box } from '@mui/material';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import styles from '../styles/utility.module.css'
-import KioskBoard from 'kioskboard';
-import keys from '../components/keyboards/CustomKeys.js'
+import styles from '../styles/utility.module.css';
+import Keyboard from "react-simple-keyboard";
+import "react-simple-keyboard/build/css/index.css";
+import LanguageLayout from '../components/keyboards/CustomKeys.js'
 
 const Lang = ({ code }) => {
     const inputRef = useRef()
     const [langState, setLangState] = useState(true)
-    const [virtualKeyboard, setVirtualKeyboard] = useState(false)
     const { pathname } = useLocation()
     const languageTitle = pathname.slice(1).charAt(0).toUpperCase() + pathname.slice(2)
 
@@ -20,52 +20,56 @@ const Lang = ({ code }) => {
         if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
             setLangState(pre => !pre)
         }
-
-        if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
-            document.querySelector('#KioskBoard-VirtualKeyboard')?.classList.toggle('kioskboard-slide-remove')
-            e.preventDefault()
-        }
     }
 
     useEffect(() => {
-
         onLoad(code)
-        if (inputRef.current && JSON.parse(localStorage.getItem('virtualKeyboard'))) {
-            KioskBoard.run(inputRef.current, {
-                language: "en",
-                theme: "light",
-                keysArrayOfObjects: keys.odia,
-                allowRealKeyboard: true,
-                allowMobileKeyboard: true,
-            })
-        }
-        setVirtualKeyboard(JSON.parse(localStorage.getItem('virtualKeyboard')))
-
-        const storedText = JSON.parse(localStorage.getItem('text'))
-        if (storedText)
-            inputRef.current.value = storedText
-            localStorage.removeItem('text')
     }, [])
 
-    const virtualKeyboardHandler = () => {
-        const virtualKeyboardStatus = JSON.parse(localStorage.getItem('virtualKeyboard'))
-        localStorage.setItem('virtualKeyboard', JSON.stringify(!virtualKeyboardStatus))
-        localStorage.setItem('text',JSON.stringify(inputRef.current.value))
-        window.location.reload(false);
-    }
+
+    // keyboard
+    const [input, setInput] = useState("");
+    const [layout, setLayout] = useState("default");
+    const keyboard = useRef();
+
+    const onChange = input => {
+        setInput(input);
+        console.log("Input changed", input);
+    };
+
+    const handleShift = () => {
+        const newLayoutName = layout === "default" ? "shift" : "default";
+        setLayout(newLayoutName);
+    };
+
+    const onKeyPress = button => {
+        console.log("Button pressed", button);
+
+        /**
+         * If you want to handle the shift and caps lock buttons
+         */
+        if (button === "{shift}" || button === "{lock}") handleShift();
+    };
+
+    const onChangeInput = event => {
+        const input = event.target.value;
+        setInput(input);
+        keyboard.current.setInput(input);
+    };
+
+    // keyboard
+
 
     return (
         <Box className={styles.backgroundGradient} sx={{ marginTop: '20px' }}>
             <Box align='center' sx={{ margin: '20px 0', color: '#fff' }}>
-                <Typography sx={{ fontSize: 'x-large' }} component='h2' gutterBottom={true}>Type {languageTitle} text in English and see the magic</Typography>
-                <Typography component='span' gutterBottom={true} sx={langState ? { backgroundColor: 'primary.main', padding: '5px', borderRadius: '4px' } : { backgroundColor: 'gray', padding: '5px', borderRadius: '4px' }}>Type in Hindi (Press Ctrl+d to toggle between English and Hindi)</Typography>
-                <Typography sx={{ marginTop: '7px' }}>Press Ctrl+m to toggle virtual keyboard temporerily</Typography>
+                <Typography sx={{ fontSize: 'x-large' }} component='h2' gutterBottom={true}>Type {languageTitle} text in English</Typography>
+                <Typography component='span' gutterBottom={true} sx={langState ? { backgroundColor: 'primary.main', padding: '5px', borderRadius: '4px' } : { backgroundColor: 'gray', padding: '5px', borderRadius: '4px' }}>Type normally (Press Ctrl+d to toggle between English and {languageTitle})</Typography>
             </Box>
             <Box align='center' sx={{ margin: '20px 0' }}>
                 <ButtonGroup variant="contained" aria-label="outlined primary button group">
                     <Button onClick={copyToClipboard}>Copy to clipboard</Button>
                     <Button onClick={downloadClipboard}>Download</Button>
-                    <Button onClick={virtualKeyboardHandler}>Virtual keyboard {virtualKeyboard ? 'Enabled' : 'Disabled'}</Button>
                 </ButtonGroup>
             </Box>
             <Box id="Wrapper" align='center'>
@@ -79,6 +83,13 @@ const Lang = ({ code }) => {
                     ref={inputRef}
                 />
             </Box>
+            <Keyboard
+                keyboardRef={r => (inputRef.current = r)}
+                layoutName={layout}
+                onChange={onChange}
+                onKeyPress={onKeyPress}
+                layout={LanguageLayout.hindi}
+            />
         </Box>
     )
 }
