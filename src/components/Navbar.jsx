@@ -19,7 +19,7 @@ import styles from '../styles/shadow.module.css'
 import { useNavigate } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About'];
+const navItems = [{ route: '/', page: 'Home' }, { route: 'about', page: 'About' }];
 
 function DrawerAppBar(props) {
     const { window } = props;
@@ -37,9 +37,9 @@ function DrawerAppBar(props) {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
+                    <ListItem key={item.page} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primary={item} />
+                            <ListItemText primary={item.page} />
                         </ListItemButton>
                     </ListItem>
                 ))}
@@ -71,8 +71,8 @@ function DrawerAppBar(props) {
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
                         {navItems.map((item) => (
-                            <Button onClick={() => navigate('/')} key={item} sx={{ color: '#fff' }}>{/* fix this */}
-                                {item}
+                            <Button onClick={() => navigate(item.route)} key={item.page} sx={{ color: '#fff' }}>
+                                {item.page}
                             </Button>
                         ))}
                     </Box>

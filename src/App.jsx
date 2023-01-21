@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import LanguageWrapperComponent from './components/LanguageComponentWrapper'
 import { Routes, Route } from 'react-router-dom'
 import Language from './pages/Language'
+import About from './pages/About'
 
 const lang = {
   'hindi': google.elements.transliteration.LanguageCode.HINDI,
@@ -38,7 +39,7 @@ const App = () => {
         <Route path='bengali' element={<Language code={lang.bengali} />} />
         <Route path='kannada' element={<Language code={lang.kannada} />} />
         <Route path='malayalam' element={<Language code={lang.malayalam} />} />
-
+        <Route path='about' element={<About />} />
       </Routes>
     </div>
   )
