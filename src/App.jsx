@@ -6,10 +6,11 @@ import Language from './pages/Language'
 const lang = {
   'hindi': google.elements.transliteration.LanguageCode.HINDI,
   'odia': google.elements.transliteration.LanguageCode.ORIYA,
-  'gujarati': google.elements.transliteration.LanguageCode.GUJARATI,
-  'tamil': google.elements.transliteration.LanguageCode.TAMIL,
-  'telugu': google.elements.transliteration.LanguageCode.TELUGU,
-  'marathi': google.elements.transliteration.LanguageCode.MARATHI,
+  'urdu': google.elements.transliteration.LanguageCode.URDU,
+  'assamese': google.elements.transliteration.LanguageCode.ASSAMESE,
+  'bengali': google.elements.transliteration.LanguageCode.BENGALI,
+  'kannada': google.elements.transliteration.LanguageCode.KANNADA,
+  'malayalam': google.elements.transliteration.LanguageCode.MALAYALAM,
 
 }
 
@@ -32,10 +33,11 @@ const App = () => {
         <Route path='/' element={<LanguageWrapperComponent />} />
         <Route path='odia' element={<Language code={lang.odia} />} />
         <Route path='hindi' element={<Language code={lang.hindi} />} />
-        <Route path='gujarati' element={<Language code={lang.gujarati} />} />
-        <Route path='tamil' element={<Language code={lang.tamil} />} />
-        <Route path='telugu' element={<Language code={lang.telugu} />} />
-        <Route path='marathi' element={<Language code={lang.marathi} />} />
+        <Route path='urdu' element={<Language code={lang.urdu} />} />
+        <Route path='assamese' element={<Language code={lang.assamese} />} />
+        <Route path='bengali' element={<Language code={lang.bengali} />} />
+        <Route path='kannada' element={<Language code={lang.kannada} />} />
+        <Route path='malayalam' element={<Language code={lang.malayalam} />} />
 
       </Routes>
     </div>
