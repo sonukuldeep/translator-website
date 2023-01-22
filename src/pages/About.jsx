@@ -8,7 +8,7 @@ import { useForm, ValidationError } from '@formspree/react';
 function ContactForm() {
     const [state, handleSubmit] = useForm("xgebvdye");
     if (state.succeeded) {
-        return <p>Thanks for the submission!</p>;
+        return <p style={{color: '#fff'}}>Thanks for the submission!</p>;
     }
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
@@ -20,13 +20,13 @@ function ContactForm() {
                 type="text"
                 name="name"
             />
-            <label htmlFor="name">
+            <label htmlFor="request-language">
                 Language to add:
             </label>
             <input
-                id="name"
+                id="request-language"
                 type="text"
-                name="name"
+                name="request-language"
             />
             <label htmlFor="email">
                 Your email:
