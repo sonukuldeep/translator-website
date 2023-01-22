@@ -21,3 +21,30 @@
 .backgroundGradient {
     position: relative;
 }
+
+.form {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    
+}
+
+.btn {
+    height: 30px;
+}
+
+.aboutPage {
+    display: grid;
+     grid-template-columns: repeat(3,auto);
+     align-items: center;
+     gap: 10px;
+     margin: 20px;
+     color: #fff 
+
+
+    }
+@media (max-width: 768px) {
+    .aboutPage {
+        grid-template-columns: repeat(1,auto);
+    }
+}

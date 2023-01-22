@@ -18,11 +18,6 @@ const keys = {
   },
   odia: {
     default: [
-      // "' ୦ ୧ ୨ ୩ ୪ ୫ ୬ ୭ ୮ ୯ ା ି ୀ {bksp}",
-      // "{tab} କ ଖ ଗ ଘ ଙ ଚ ଛ ଜ ଝ ଞ ଟ ଠ ଡ ଢ",
-      // "{lock} ଣ ତ ଥ ଦ ଧ ନ ପ ଫ ବ 	ଭ ମ {enter}",
-      // "{shift} ଯ ର ଲ ଳ ଵ 	ଶ ଷ ସ ହ , {shift}",
-      // ".com @ {space}",
       "\u0B66 \u0B67 \u0B68 \u0B69 \u0B6A \u0B6B \u0B6C \u0B6D \u0B6E \u0B6F \u0B0B \u0B43 {bksp}",
       "{tab} \u0B4C \u0B48 \u0B3E \u0B40 \u0B42 \u0B2C \u0B39 \u0B17 \u0B26 \u0B1C \u0B21 \u0B3C",
       "\u0B4B \u0B47 \u0B4D \u0B3F \u0B41 \u0B2A \u0B30 \u0B15 \u0B24 \u0B1A \u0B1F {enter}",
@@ -30,11 +25,6 @@ const keys = {
       ".com @ {space}",
     ],
     shift: [
-      // "\" ୲ ୳ ୴ ୵ ୶ ୷ ୰ ୱ ୢ ୣ ୖ ୗ {bksp}",
-      // "{tab} ଅ ଆ ଇ ଈ ଉ ଊ ଋ ଌ ଏ ଐ 	ଓ ଔ",
-      // "{lock} ଡ଼ ଢ଼ ୟ ୠ ୡ େ ୈ ୋ ୌ ୍ {enter}",
-      // "{shift} ଁ ଂ ଃ ଼ ଽ ୁ ୂ ୃ ୄ {shift}",
-      // ".com @ {space}",
       "\u0B4D\u0B30 \u0B30\u0B4D \u0B1C\u0B4D\u0B1E \u0B24\u0B4D\u0B30 \u0B15\u0B4D\u0B37 \u0B36\u0B4D\u0B30 \u0028 \u0029 \u0B03 \u0B60 \u0B44 {bksp}",
       "{tab} \u0B14 \u0B10 \u0B06 \u0B63 \u0B08 \u0B0A \u0B2D \u0B19 \u0B18 \u0B27 \u0B1D \u0B22 \u0B5C \u0B1E",
       "\u0B13 \u0B0F \u0B05 \u0B62 \u0B07 \u0B09 \u0B2B  \u0B16 \u0B25 \u0B1B \u0B20 {enter}",
