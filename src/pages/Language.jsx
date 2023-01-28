@@ -10,7 +10,6 @@ import Keyboard from "react-simple-keyboard";
 import "react-simple-keyboard/build/css/index.css";
 import LanguageLayout from '../components/keyboards/CustomKeys.js'
 
-
 const Lang = ({ code }) => {
     const [langState, setLangState] = useState(true)
     const { pathname } = useLocation()
@@ -27,6 +26,7 @@ const Lang = ({ code }) => {
     useEffect(() => {
         onLoad(code)
     }, [])
+
 
     // keyboard
     const [input, setInput] = useState("");

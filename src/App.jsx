@@ -12,6 +12,7 @@ const lang = {
   'bengali': google.elements.transliteration.LanguageCode.BENGALI,
   'kannada': google.elements.transliteration.LanguageCode.KANNADA,
   'malayalam': google.elements.transliteration.LanguageCode.MALAYALAM,
+  'telugu': google.elements.transliteration.LanguageCode.TELUGU,
 
 }
 
@@ -39,6 +40,7 @@ const App = () => {
         <Route path='bengali' element={<Language code={lang.bengali} />} />
         <Route path='kannada' element={<Language code={lang.kannada} />} />
         <Route path='malayalam' element={<Language code={lang.malayalam} />} />
+        <Route path='telugu' element={<Language code={lang.telugu} />} />
         <Route path='about' element={<About />} />
       </Routes>
     </div>
