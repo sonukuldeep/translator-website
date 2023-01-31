@@ -44,7 +44,7 @@ const data = [
     {
         imageLink: "https://telugu.nativeplanet.com/img/2016/10/12-1476267197-monumentsbuiltbywomen-2.jpg",
         title: "English to Telugu",
-        description: "Change your language and you change your thoughts Karl Albrecht",
+        description: "Language is the blood of the soul into which thoughts run and out of which they grow. Oliver Wendell Holmes",
         route: 'telugu',
         LanguageCode: google.elements.transliteration.LanguageCode.telugu,
     },
