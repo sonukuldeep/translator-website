@@ -26,7 +26,7 @@ const App = () => {
       const response = await fetchQuote()
       setQuote(response)
     }
-    quoteData()
+    // quoteData()
 
   }, [])
 
@@ -51,6 +51,7 @@ const App = () => {
 
 export default App
 
+//https://github.com/lukePeavey/quotable please check this and contribute
 async function fetchQuote() {
   const quoteUrl = "https://quotable.io/quotes?maxLength=100"
   const res = await fetch(quoteUrl)
