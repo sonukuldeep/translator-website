@@ -55,14 +55,14 @@ const keys = {
       "{lock} \u0C4B \u0C47 \u0C4D \u0C3F \u0C41 \u0C2A \u0C30 \u0C15 \u0C24 \u0C1A \u0C1F {enter}",
       "{shift}  \u0C46 \u0C02 \u0C2E \u0C28 \u0C35 \u0C32 \u0C38 , . \u0C2F {shift}",
       ".com @ {space}",
-  ],
-  shift: [
+    ],
+    shift: [
       "\u0C12   \u0C4D\u0C30  \u0C1C\u0C4D\u0C1E \u0C24\u0C4D\u0C30 \u0C15\u0C4D\u0C37 \u0C36\u0C4D\u0C30 ( ) \u0C03 \u0C0B {bksp}",
       "{tab} \u0C14 \u0C10 \u0C06 \u0C08 \u0C0A \u0C2D \u0C19 \u0C18 \u0C27 \u0C1D \u0C22 \u0C1E ",
       "{lock} \u0C13 \u0C0F \u0C05 \u0C07 \u0C09 \u0C2B \u0C31 \u0C16 \u0C25 \u0C1B \u0C20 {enter}",
       "{shift}  \u0C0E \u0C01 \u0C23 \u0C28  \u0C33 \u0C36 \u0C37   {shift}",
       ".com @ {space}",
-  ],
+    ],
   },
   bengali: {
     default: [
@@ -109,6 +109,22 @@ const keys = {
       "{tab} \u0D4C \u0D48 \u0D3E \u0D40 \u0D42 \u0D2C \u0D39 \u0D17 \u0D26 \u0D1C \u0D21 \u0D4E \\",
       "{lock} \u0D4B \u0D47 \u0D4D \u0D3F \u0D41 \u0D2A \u0D30 \u0D15 \u0D24 \u0D1A \u0D1F {enter}",
       "{shift} \u0D46 \u0D02 \u0D2E \u0D28 \u0D35 \u0D32 \u0D38 . \u0D2F {shift}",
+      ".com @ {space}",
+    ],
+  },
+  punjabi: {
+    default: [
+      " 1 2 3 4 5 6 7 8 9 0 -  {bksp}",
+      "{tab} \u0A4C \u0A48 \u0A3E \u0A40 \u0A42 \u0A2C \u0A39 \u0A17 \u0A26 \u0A1C \u0A21 \u0A3C ",
+      "{lock} \u0A4B \u0A47 \u0A4D \u0A3F \u0A41 \u0A2A \u0A30 \u0A15 \u0A24 \u0A1A \u0A1F {enter}",
+      "{shift}  \u0A70 \u0A2E \u0A28 \u0A35 \u0A32 \u0A38 , . \u0A2F {shift}",
+      ".com @ {space}",
+    ],
+    shift: [
+      "\u0A4D\u0A39 \u0A4D\u0A35 \u0A4D\u0A2F \u0A4D\u0A30 \u0A71     ( )   {bksp}",
+      "{tab} \u0A14 \u0A10 \u0A06 \u0A08 \u0A0A \u0A2D \u0A19 \u0A18 \u0A27 \u0A1D \u0A22 \u0A1E ",
+      "{lock} \u0A13 \u0A0F \u0A05 \u0A07 \u0A09 \u0A2B \u0A5C \u0A16 \u0A25 \u0A1B \u0A20 {enter}",
+      "{shift}  \u0A02 \u0A23  \u0A72 \u0A33 \u0A36  \u0964  {shift}",
       ".com @ {space}",
     ],
   },
