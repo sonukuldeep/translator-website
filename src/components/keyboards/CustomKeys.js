@@ -48,21 +48,21 @@ const keys = {
       ".com @ {space}",
     ],
   },
-  assamese: {
+  telugu: {
     default: [
-      "\u0965 \u09e7 \u09e8 \u09e9 \u09ea \u09eb \u09ec \u09ed \u09ee \u09ef \u09e6 \u002d \u09c3 {bksp}",
-      "{tab} \u09cc \u09c8 \u09be \u09c0 \u09c2 \u09ac \u09b9 \u0997 \u09a6 \u099c \u09a1 \u09bc",
-      "\u09cb \u09c7 \u09cd \u09bf \u09c1 \u09aa \u09f0 \u0995 \u09a4 \u099a \u099f {enter}",
-      "{shift} \u0982 \u09ae \u09a8 \u09f1 \u09b2 \u09b8 \u002c \u002e \u09df {shift}",
+      "\u0C4A 1 2 3 4 5 6 7 8 9 0 - \u0C43 {bksp}",
+      "{tab} \u0C4C \u0C48 \u0C3E \u0C40 \u0C42 \u0C2C \u0C39 \u0C17 \u0C26 \u0C1C \u0C21  ",
+      "{lock} \u0C4B \u0C47 \u0C4D \u0C3F \u0C41 \u0C2A \u0C30 \u0C15 \u0C24 \u0C1A \u0C1F {enter}",
+      "{shift}  \u0C46 \u0C02 \u0C2E \u0C28 \u0C35 \u0C32 \u0C38 , . \u0C2F {shift}",
       ".com @ {space}",
-    ],
-    shift: [
-      "\u0021 \u0040 ( ) \u0983 \u098b {bksp}",
-      "{tab} \u0994 \u0990 \u0986 \u0998 \u098a \u09ad \u0999 \u0998 \u09a7 \u099d \u09a2 \u099e",
-      "\u0993 \u098f \u0985 \u0987 \u0989 \u09ab  \u0996 \u09a5 \u099b \u099b \u09a0 {enter}",
-      "{shift} \u0981 \u09a3 \u09b6 \u09b7 \u0964 \u09af {shift}",
+  ],
+  shift: [
+      "\u0C12   \u0C4D\u0C30  \u0C1C\u0C4D\u0C1E \u0C24\u0C4D\u0C30 \u0C15\u0C4D\u0C37 \u0C36\u0C4D\u0C30 ( ) \u0C03 \u0C0B {bksp}",
+      "{tab} \u0C14 \u0C10 \u0C06 \u0C08 \u0C0A \u0C2D \u0C19 \u0C18 \u0C27 \u0C1D \u0C22 \u0C1E ",
+      "{lock} \u0C13 \u0C0F \u0C05 \u0C07 \u0C09 \u0C2B \u0C31 \u0C16 \u0C25 \u0C1B \u0C20 {enter}",
+      "{shift}  \u0C0E \u0C01 \u0C23 \u0C28  \u0C33 \u0C36 \u0C37   {shift}",
       ".com @ {space}",
-    ],
+  ],
   },
   bengali: {
     default: [

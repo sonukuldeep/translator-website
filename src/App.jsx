@@ -13,6 +13,7 @@ const lang = {
   'kannada': google.elements.transliteration.LanguageCode.KANNADA,
   'malayalam': google.elements.transliteration.LanguageCode.MALAYALAM,
   'telugu': google.elements.transliteration.LanguageCode.TELUGU,
+  'punjabi': google.elements.transliteration.LanguageCode.PUNJABI,
 
 }
 
@@ -41,6 +42,7 @@ const App = () => {
         <Route path='kannada' element={<Language code={lang.kannada} />} />
         <Route path='malayalam' element={<Language code={lang.malayalam} />} />
         <Route path='telugu' element={<Language code={lang.telugu} />} />
+        <Route path='punjabi' element={<Language code={lang.punjabi} />} />
         <Route path='about' element={<About />} />
       </Routes>
     </div>
@@ -50,7 +52,8 @@ const App = () => {
 export default App
 
 async function fetchQuote() {
-  const res = await fetch('https://api.quotable.io/random')
+  const quoteUrl = "https://quotable.io/quotes?maxLength=100"
+  const res = await fetch(quoteUrl)
   if (res.ok) {
     const data = await res.json()
     return data
