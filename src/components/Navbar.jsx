@@ -65,11 +65,12 @@ function DrawerAppBar(props) {
                     <Typography
                         variant="h6"
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+                        sx={{ display: { xs: 'none', sm: 'block' }, cursor: 'pointer' }}
+                        onClick={() => navigate('/')}
                     >
                         Translator
                     </Typography>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    <Box sx={{ display: { xs: 'none', sm: 'block' }, marginLeft: 'auto' }}>
                         {navItems.map((item) => (
                             <Button onClick={() => navigate(item.route)} key={item.page} sx={{ color: '#fff' }}>
                                 {item.page}
